@@ -6,10 +6,6 @@ import { createStore, applyMiddleware } from 'redux'
 import rootReducer from '../reducers'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
-//创建一个中间件以便执行异步action
-/*const createStoreWithMiddleware = applyMiddleware(
-  thunk
-)(createStore)*/
 
 const loggerMiddleware = createLogger()
 

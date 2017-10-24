@@ -1,13 +1,21 @@
 import React from 'react'
-import './home.less'
+import styles from './home.css'
 
 export default class Home extends React.Component {
-	constructor(props) {
-		super(props)
+	componentWillMount() {
+		this.props.actions.enterHome()
 	}
 	render() {
+		console.log('render')
 		return (
-			<div className="home">Home</div>
+			<div className={styles.home}>
+				{ this.props.data.home.topics.map((topic, index) => {
+						return  (
+								<p key={index}>{topic.topic}</p>
+						)
+					})
+				}
+			</div>
 		)
 	}
 }
