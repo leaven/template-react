@@ -1,0 +1,1 @@
+export const GET_HOME_TOPIC = 'GET_HOME_TOPIC'

@@ -1,14 +1,14 @@
-
-//base css
-import './common/style/normalize.css';
-// import './layout.less';
-
-import App from './routes/';
-import ReactDOM from 'react-dom'
 import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+
+import App from './routes/'
+import store from './redux/store/configureStore.js'
+
+import './common/style/normalize.css'
+import './common/style/base.css'
 
 import Promise from 'promise-polyfill'
-
 if (!window.Promise) {
 	window.Promise = Promise
 }
@@ -18,7 +18,9 @@ if (!window.fetch) {
 }
 
 ReactDOM.render(
-		<App />,
+	<Provider store={store}>
+		<App />
+	</Provider>,
 	document.querySelector('#app')
 );
 
