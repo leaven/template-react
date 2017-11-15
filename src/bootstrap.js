@@ -17,10 +17,17 @@ if (!window.fetch) {
 	window.fetch = fetch
 }
 
-ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.querySelector('#app')
-);
+const render = App => {
+	ReactDOM.render(
+		<Provider store={store}>
+			<App />
+		</Provider>,
+		document.querySelector('#app')
+	)
+}
 
+render(App)
+
+if (module.hot) {
+  module.hot.accept('./routes/', () => { render(App) })
+}
