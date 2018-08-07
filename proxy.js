@@ -26,8 +26,7 @@ module.exports = {
 					'Hello World',
 					'你好',
 					'欢迎来到React世界',
-					'这是首页',
-					'滴滴一下'
+					'这是首页'
 				]
 			}]
 		}
